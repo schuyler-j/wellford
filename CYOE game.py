@@ -44,6 +44,7 @@ if intro == "y":
             print(begin)
             new1 = input("Will you use your powers for Good or Evil? ")
             moral = new1
+
 #follow the good path
             if moral == "good":
                 print ("With good will in your heart you walk down an enlightened path.")
@@ -108,14 +109,6 @@ if intro == "y":
 
                 else:
                     print ("Congratulations!")
-
-
-
-
-
-
-
-
 
 
 #didn't use the key
