@@ -73,7 +73,7 @@ if intro == "y":
                 
 
                 dice_roll = random.randint(1, 6)
-                if dice_roll >= 1:
+                if dice_roll > 2:
                     print ("Your", wish1a, "has fallen down a well!")
                     print ("You wrap your", wish2a, "around your", wish3a, "and pray for sweet release")
                     print ("An unruly group of", result, "fall from the sky - killing you instantly")
@@ -89,7 +89,25 @@ if intro == "y":
                     good_path = input("What is your choice? a/b/c ")
                     if good_path == "a":
                         fate = 1
-                        print ("")
+                        input("You move toward the bucket to wash your face")
+			input("The water is cool and refreshing!")
+			input("Now with a clear head you realise you are very far from home")
+			input("You feel around for your", wish1a, "and give it a little rub")
+			gp1 = input("Do you feel lucky? Heads or Tails? ")
+			if gp1 == "Heads":
+			   coin_toss = random.randint(1, 2)
+			   coin = ""
+			   if coin_toss == 1:
+			      coin = "Heads"
+			      if coin == gp1:
+				 print("*Coin lands on", coin,"!")
+				 print("You Win!")
+			   elif coin_toss == 2:
+				coin = "Tails"
+				print("*Coin lands on", coin, "!")
+				print("You Lose!")
+				print ("Game Over!")
+				
                     elif good_path == "b":
                         fate = 2
                     elif good_path == "c":
@@ -105,10 +123,12 @@ if intro == "y":
                 print (dice_roll_evil)
                 if dice_roll_evil >= 2:
                     print ("You are the most unlucky fool to ever exist!")
-                    print ("You traverse a nearby bridge and break every evil bone in your body")
+                    print ("You traverse a nearby bridge and break every bone in your body")
+		    print ("Whats the square
 
                 else:
-                    print ("Congratulations!")
+                    print ("Congratulations!, You won the lucky draw...")
+		    print ("Collect your prizes, NOWHERE!")
 
 
 #didn't use the key
