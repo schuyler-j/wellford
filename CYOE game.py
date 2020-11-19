@@ -47,6 +47,7 @@ if intro == "y":
 
             # follow the good path
             if moral == "good":
+                print(begin)
                 print("With good will in your heart you walk down an enlightened path.")
                 time.sleep(2)
                 print("You arrive at a noisy tavern and inside you see three loud dwarfs arguing")
@@ -87,7 +88,7 @@ if intro == "y":
                     print("(a) - Wash your face?")
                     print("(b) - Stare at yourself?")
                     print("(c) - Have a drink?")
-                    good_path = input("What is your choice? a/b/c ")
+                    good_path = input("What is your choice? ")
 
                     if good_path == "a":
                         fate = 0
@@ -103,7 +104,7 @@ if intro == "y":
                                 coin = "Heads"
                                 print("Coin lands on", coin, "!")
                                 print("You survive and continue forward")
-                                quiz1 = input("What is the square root of 157? ")
+                                quiz1 = input("What is the square root of 144? ")
                                 if quiz1 == "12":
                                     fate = fate + 1
                                 else:
@@ -114,10 +115,41 @@ if intro == "y":
                                 print("You Lose!")
                                 print("Game Over!")
 
+                        #has washed face
+                            print("How did you end up here?")
+                            gp2 = input("Do you enjoy puzzles? y/n ")
+                            if gp2 == "y":
+                                print("Good!")
+                                print("Let's continue...")
+
+                            else:
+                                print("Goodbye!")
+
+                        elif gp1 == "tails":
+                            coin_toss = random.randint(1, 2)
+                            coin = 1
+                            if coin_toss == coin:
+                                coin = "Tails"
+                                print("Coin lands on", coin, "!")
+                                print("You survive and continue forward.")
+                                print("You happen across a group of ", result, "blocking the way...")
+                                print("With your ", wish3a, "in hand, you wave it at the ", result)
+                                print("Mesmerised by your majestic", wish3a, ", the ", result, "vanish!")
+                            else:
+                                coin = "Heads"
+                                print("Coin lands on", coin, "!")
+                                print("You Lose!")
+                                print("Game Over!")
+
+                    #stared at self
                     elif good_path == "b":
-                        fate = 0
+                        fate = 3
+
+                    #had drink
                     elif good_path == "c":
-                        fate = 0
+                        fate = 9
+
+                    print("Hello")
 
 
             # follow the evil path
