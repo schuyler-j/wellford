@@ -124,7 +124,7 @@ if intro == "y":
                 if dice_roll_evil >= 2:
                     print ("You are the most unlucky fool to ever exist!")
                     print ("You traverse a nearby bridge and break every bone in your body")
-		    print ("Whats the square
+		    print ("Whats the square")
 
                 else:
                     print ("Congratulations!, You won the lucky draw...")
