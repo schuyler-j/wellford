@@ -1,6 +1,9 @@
 import random
 import time
 
+
+fate = 0
+
 intro = input("Hello, welcome to the 'Game', would you like to play? y/n ")
 
 if intro == "y":
@@ -106,8 +109,10 @@ if intro == "y":
                                 print("You survive and continue forward")
                                 quiz1 = input("What is the square root of 144? ")
                                 if quiz1 == "12":
+                                    print("Correct!")
                                     fate = fate + 1
                                 else:
+                                    print("Hmm...")
                                     fate = fate - 1
                             else:
                                 coin = "Tails"
@@ -121,6 +126,18 @@ if intro == "y":
                             if gp2 == "y":
                                 print("Good!")
                                 print("Let's continue...")
+                                print(begin)
+                                print("Your first riddle...")
+                                def quiz_one():
+                                    print("The angry box caught dinosaurs eating fruit going home in June.")
+                                    gp2 = input("Your Answer: ")
+                                    if gp2 == "alphabet":
+                                        print("Correct! ")
+                                        fate = fate + 1
+                                    else:
+                                        print("Try Again! ")
+                                        return quiz_one()
+                                print (quiz_one())
 
                             else:
                                 print("Goodbye!")
@@ -134,7 +151,9 @@ if intro == "y":
                                 print("You survive and continue forward.")
                                 print("You happen across a group of ", result, "blocking the way...")
                                 print("With your ", wish3a, "in hand, you wave it at the ", result)
-                                print("Mesmerised by your majestic", wish3a, ", the ", result, "vanish!")
+                                print("Mesmerised by your majestic", wish3a, ", the ", result, "vanish! Leaving only a strange looking stick...")
+                                print("You pick the stick up and carry on.")
+                                stick_state = True
                             else:
                                 coin = "Heads"
                                 print("Coin lands on", coin, "!")
@@ -160,17 +179,15 @@ if intro == "y":
                 dice_roll_evil = random.randint(1, 6)
                 print(dice_roll_evil)
                 if dice_roll_evil >= 2:
-<<<<<<< HEAD
-                    print ("You are the most unlucky fool to ever exist!")
-                    print ("You traverse a nearby bridge and break every bone in your body")
-		    print ("Whats the square")
-=======
                     print("You are the most unlucky fool to ever exist!")
                     print("You traverse a nearby bridge and break every bone in your body")
->>>>>>> f4cee262628a2755fe514343840060bec41514db
 
                 else:
                     print("Congratulations!, You won the lucky draw...")
+                    print("Where would you like to go with your evil self?")
+                    direction = input("N/E/S/W: ")
+            else:
+                print ("Goodbye!")
 
 
         # didn't use the key
