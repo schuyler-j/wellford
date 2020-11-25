@@ -4,6 +4,10 @@ import time
 
 fate = 0
 
+def game_over():
+    while 1 > 0:
+        print("")
+
 intro = input("Hello, welcome to the 'Game', would you like to play? y/n ")
 
 if intro == "y":
@@ -119,6 +123,7 @@ if intro == "y":
                                 print("Coin lands on", coin, "!")
                                 print("You Lose!")
                                 print("Game Over!")
+                                print(game_over)
 
                         #has washed face
                             print("How did you end up here?")
@@ -193,12 +198,22 @@ if intro == "y":
         # didn't use the key
         else:
             print("You feel a strange energy come over you and find your hand raised to the door with the key inside.")
-            print("*Click*, the door unlocks, you enter, a voice asks you for three wishes...")
+            print("*Click*, the door unlocks, you enter, a voice asks you for a single wish...")
             wish1b = input("Your first wish? - I wish for a... ")
 
             print("*Woosh!*, A resistence is felt deep within your bones...")
             print("Suddenly a", wish1b, "appears in front of you")
             print(begin)
+            print("Do you like the colour of your new", wish1b, "?")
+            no_key = input("y/n ")
+            if no_key == "y":
+                print("Things are not as they seem...")
+                print("Do you feel that???")
+                print("Hmm...")
+            else:
+                print("Well, why didn't you say so...")
+                print("Now we'll never get back home...")
+
 
 
     # didn't pass through the door
