@@ -1,3 +1,5 @@
+import numpy as np
+import matplotlib.pyplot as plt
 import time
 import random
 
@@ -8,8 +10,8 @@ l = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 f = []
 g = []
 total = []
-global cor
 cor = 0
+x = 0
 def getran():
     for i in l:
         n = random.randint(0, 1)
@@ -21,27 +23,57 @@ def getran():
 
 def check():
     for i in f:
-        if f[i] == g[i]:
+        if i == g[i]:
             global cor 
             cor = cor + 1
-            total.append(i)
+            total.append(cor)
         else:
-            pass
+            cor = cor - 1
+            total.append(cor)
     for i in g:
-        if g[i] == f[i]:
-            cor = cor - (i*8)
-            total.append(i)
+        if i == f[i]:
+            cor = cor + 1 
+            total.append(cor)
         else:
-            pass
+            cor = cor - 1
+            total.append(cor)
+        print (i)
+    
+    for i in f:
+        if i == f[i]:
+            cor = cor + 1 
+            total.append(cor)
+        else:
+            cor = cor - 1
+            total.append(cor)
+        print (i)
+ 
+    for i in g:
+        if i == g[i]:
+            cor = cor + 1 
+            total.append(cor)
+        else:
+            cor = cor - 1
+            total.append(cor)
+        print (i)
+    
 
-    print (len(total))
-'''
+
+
+
+
+
 getran()
 check()
 print (f)
 print (g)
-'''
+print (total)
 
+x = total
+y = total
+
+plt.plot(x,y)
+plt.show()
 
 #extended loop (optimise???how?)
 zz = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
@@ -52,6 +84,7 @@ zz = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
         1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
         1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2,
         1, 2]
+'''
 for i in zz:
     getran()
     if i == 1:
@@ -61,3 +94,11 @@ for i in zz:
     else:
         print(g)
         check()
+'''
+
+
+
+
+
+
+
