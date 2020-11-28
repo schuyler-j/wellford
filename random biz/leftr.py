@@ -38,7 +38,7 @@ def check():
             cor = cor - 1
             total.append(cor)
         print (i)
-    
+    '''
     for i in f:
         if i == f[i]:
             cor = cor + 1 
@@ -56,7 +56,7 @@ def check():
             cor = cor - 1
             total.append(cor)
         print (i)
-    
+    '''
 
 
 
@@ -69,10 +69,11 @@ print (f)
 print (g)
 print (total)
 
-x = total
+N = total
+x = np.random.randint(N)
 y = total
 
-plt.plot(x,y)
+plt.pcolormesh([x,y])
 plt.show()
 
 #extended loop (optimise???how?)
