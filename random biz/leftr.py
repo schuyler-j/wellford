@@ -12,33 +12,37 @@ g = []
 total = []
 cor = 0
 x = 0
+
 def getran():
     for i in l:
         n = random.randint(0, 1)
-        a = f.append(n)
+        f.append(n)
 
     for i in l:
         m = random.randint(0, 1)
-        b = g.append(m)
+        g.append(m)
 
 def check():
     for i in f:
-        if i == g[i]:
+        if i == g[i]-1:
             global cor 
-            cor = cor + 1
-            total.append(cor)
-        else:
             cor = cor - 1
             total.append(cor)
+        else:
+            cor = cor + 1
+            total.append(cor)
+        print (g[i]-1)
+        print ("space")
+    
     for i in g:
-        if i == f[i]:
+        if i == f[i]-1:
             cor = cor + 1 
             total.append(cor)
         else:
             cor = cor - 1
             total.append(cor)
-        print (i)
-    '''
+'''
+    
     for i in f:
         if i == f[i]:
             cor = cor + 1 
@@ -56,11 +60,10 @@ def check():
             cor = cor - 1
             total.append(cor)
         print (i)
-    '''
-
-
-
 '''
+
+
+
 
 
 getran()
@@ -69,28 +72,30 @@ print (f)
 print (g)
 print (total)
 
-N = total
-x = np.random.randint(N)
+N = total 
+#x = np.random.randint(N)
+x = total
 y = total
 
 plt.pcolormesh([x,y])
 plt.show()
 '''
-
 z = 1
+
 #extended loop (optimise???how?)
 #while seems slower
+
 while z > 0:
     for i in range(1, 2):
         getran()
         if i == 1:
             print(f)
-            time.sleep(0.2)
+            time.sleep(0.5)
 
         else:
             print(g)
             check()
-
+'''
 
 
 
