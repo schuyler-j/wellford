@@ -23,23 +23,25 @@ def getran():
         g.append(m)
 
 def check():
+    i = [1, 2, 3, 4, 5, 6, 7, 8]
     for i in f:
-        if i == g[i]-1:
+        for i in g:
+
             global cor 
+            cor = cor + 1
+            total.append(cor)
+        else:
+            cor = cor - 1
+            total.append(cor)
+
+
+
+    for i in f:
+        if g[i] == f[i]:
             cor = cor - 1
             total.append(cor)
         else:
             cor = cor + 1
-            total.append(cor)
-        print (g[i]-1)
-        print ("space")
-    
-    for i in g:
-        if i == f[i]-1:
-            cor = cor + 1 
-            total.append(cor)
-        else:
-            cor = cor - 1
             total.append(cor)
 '''
     
@@ -79,6 +81,7 @@ y = total
 
 plt.pcolormesh([x,y])
 plt.show()
+
 '''
 z = 1
 
