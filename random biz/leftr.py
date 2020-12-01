@@ -25,23 +25,22 @@ def getran():
 def check():
     i = [1, 2, 3, 4, 5, 6, 7, 8]
     for i in f:
-        for i in g:
-
+        if i == g[i]-1:
             global cor 
-            cor = cor + 1
-            total.append(cor)
-        else:
-            cor = cor - 1
-            total.append(cor)
-
-
-
-    for i in f:
-        if g[i] == f[i]:
             cor = cor - 1
             total.append(cor)
         else:
             cor = cor + 1
+            total.append(cor)
+
+
+
+    for i in g:
+        if i == f[i]-1:
+            cor = cor + 1
+            total.append(cor)
+        else:
+            cor = cor - 1
             total.append(cor)
 '''
     
