@@ -80,7 +80,7 @@ y = total
 
 plt.pcolormesh([x,y])
 plt.show()
-
+print(y)
 '''
 z = 1
 
