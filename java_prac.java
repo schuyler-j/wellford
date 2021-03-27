@@ -1,114 +1,104 @@
-package practical03;
 
 import java.util.Scanner;
 
-public class Bis {
+public class Main{
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
+        
         Scanner scan = new Scanner(System.in);
-
-        String first, second, third, fourth;
-
-        // declare any variables here
-        int biscuits, packet, box, remainder, leftover;
-
-        // prompt for the number of biscuits
+        
+        int biscuits1;
+        
         System.out.println("Enter the number of biscuits");
-        biscuits = scan.nextInt();
+        biscuits1 = scan.nextInt();
+        
+        int packet1, box1, leftover1, remainder1;
 
-        ///math
-        packet = biscuits / 12;
-        remainder = packet % 30;
-        box = packet / 30;
-        leftover = biscuits % 12;
+        String is = "is";
+        String are = "are";
 
-        ///initial strings
-        first = "There";
-        third = " packets of";
-        second = " box";
-        fourth = " packets";
-        String plural = " packets of biscuits: ";
+        String box = "box";
+        String boxes = "boxes";
 
-        ///zeros and ones
-        if(leftover == 1){
-            third = " 1 leftover biscuit";
-        }
-        if(leftover == 0){
-            third = " no leftover biscuits";
-        }
+        String biscuit = "biscuit";
+        String biscuits = "biscuits";
 
-        if(box == 1){
-            second = " 1 box ";
-        }
-        if(box == 0){
-            second = " no boxes ";
-        }
+        String packet = "packet";
+        String packets = "packets";
 
-        if(remainder == 0){
-            fourth = " no leftover packets ";
-        }
-        if(remainder == 1){
-            fourth = " 1 leftover packet ";
-        }
-
-        if(packet == 0){
-            plural = " are no packets of biscuits:";
-        }
-        if(packet == 1){
-            plural = " is 1 packet of biscuits:";
-        }
-
-        if(packet > 1){
-            plural = " packets of biscuits: ";
-        }
-        if(remainder > 1){
-            fourth = " leftover packets ";
-        }
-        if(box > 1){
-            second = " boxes";
-        }
-        if(leftover > 1){
-            third = " leftover biscuits";
-        }
-
-        ///print these for checking (not a part of code)
-        System.out.println(packet + "packet");
-        System.out.println(remainder + "remainder");///leftover biscuits
-        System.out.println(box + "box"); ///boxes
-        System.out.println(leftover + "leftover"); ///packets leftover
-
-
-        if(packet > 1 && remainder > 1 && box > 1 && leftover > 1){
-            System.out.println(first + " are " + packet + plural + box + second + " with " + remainder + fourth + "and " + leftover + third);
-        }
-        if(packet > 1 && box > 1 && leftover > 1){
-            System.out.println(first + " are " + packet + plural + box + second + " with" + fourth + "and " + leftover + third);
-        }
-        if(packet > 1 && box > 1){
-            System.out.println(first + " are " + packet + plural + box + second + " with" + fourth + "and " + third);
-        }
-        if(packet > 1){
-            System.out.println(first + " are " + packet + plural + second + "with" + fourth + "and " + third);
-        }
-
-        if(packet > 1 && remainder > 1 && leftover > 1){
-            System.out.println(first + " are " + packet + plural + second + "with " + remainder + fourth + "and " + leftover + third);
-        }
-        if(packet > 1 && remainder > 1){
-            System.out.println(first + " are " + packet + plural + second + "with " + remainder + fourth + "and " + third);
-        }
-        if(packet > 1 && leftover > 1){
-            System.out.println(first + " are " + packet + plural + second + "with" + fourth + "and " + leftover + third);
-        }
-
-        if(leftover > 1){
-            System.out.println(first +  plural + second + "with" + fourth + "and " + leftover + third);
-        }
+        packet1 = biscuits1 / 12;
+        remainder1 = packet1 % 30;
+        box1 = packet1 / 30;
+        leftover1 = biscuits1 % 12;
 
 
 
-        System.out.println(first + plural + second + "with" + fourth + "and" + third);
+        String a = "";
+        String b = "";
+        String c = "";
+        String d = "";
 
 
+        if(packet1 == 1){
+            are = "is";
+        }
+        if(packet1 > 1 || packet1 == 0){
+            packet = "packets";
+        }
+        if(packet1 == 0){
+            a = "no";
+        }
+        if(box1 > 1){
+            box = "boxes";
+        }
+        if(box1 == 0){
+            b = "no";
+        }
+        if(box1 == 0){
+            box = "boxes";
+        }
+        if(leftover1 > 1){
+            packet = "packets";
+        }
+        if(leftover1 == 0){
+            c = "no";
+        }
+        if(leftover1 == 1){
+            packet = "packet";
+        }
+        if(remainder1 > 1){
+            biscuit = "biscuits";
+        }
+        if(remainder1 == 1){
+            biscuit = "biscuit";
+        }
+        if(remainder1 == 0){
+            biscuit = "biscuits";
+        }
+        if(remainder1 == 0){
+            d = "no";
+        }
+
+        if(packet1 > 0){
+            a = String.valueOf(packet1);
+        }
+        if(box1 > 0){
+            b = String.valueOf(box1);
+        }
+        if(leftover1 > 0){
+            c = String.valueOf(leftover1);
+        }
+        if(remainder1 > 0){
+            d = String.valueOf(remainder1);
+        }
+
+
+        System.out.println("There " + are + " " + a + " " + packet + " of " + biscuit + " : " + b + " " + box + " with " + 
+                           c + " leftover " + packet + " and " + d + " leftover " + biscuit);
+
+
+        ///There are/is x/no packet/s of biscuit/s: x/no box/es with x/no leftover packet/s and x/no leftover biscuit/s
+
+        
     }
 }
