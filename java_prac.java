@@ -28,6 +28,7 @@ public class Main{
         String packets = "packets";
         
         String packetA = "";
+        String biscuitA = "";
 
         packet1 = biscuits1 / 12;
         remainder1 = packet1 % 30;
@@ -103,7 +104,25 @@ public class Main{
         if(leftover1 == 1){
             biscuit = "biscuit";
         }
-
+        if(packet1 > 1){
+            biscuitA = "biscuits";
+        }
+        if(packet1 == 1){
+            biscuitA = "biscuits";
+        }
+        if(leftover1 > 1){
+            biscuitA = "biscuits";
+        }
+        
+        if(remainder1 == 1){
+            packet = "packet";
+        }
+        if(packet1 > 1){
+            packetA = "packets";
+        }
+        if(packet1 == 0){
+            biscuitA = "biscuits";
+        }
         
         
 
@@ -121,7 +140,8 @@ public class Main{
         }
 
 
-        System.out.println("There " + are + " " + a + " " + packetA + " of " + biscuit + " : " + b + " " + box + " with " + d + " leftover " + packet + " and " + c + " leftover " + biscuit);
+
+        System.out.println("There " + are + " " + a + " " + packetA + " of " + biscuitA + " : " + b + " " + box + " with " + d + " leftover " + packet + " and " + c + " leftover " + biscuit);
 
 
         ///There are/is x/no packet/s of biscuit/s: x/no box/es with x/no leftover packet/s and x/no leftover biscuit/s
