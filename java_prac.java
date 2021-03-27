@@ -139,13 +139,20 @@ public class Main{
             d = String.valueOf(remainder1);
         }
 
+        if(biscuits1 > 0 && biscuits1 < 360){
+        System.out.println("There " + are + " " + a + " " + packetA + " of " + biscuitA + ": no boxes with no leftover packets and no leftover biscuits");
+        }else{
 
-
-        System.out.println("There " + are + " " + a + " " + packetA + " of " + biscuitA + " : " + b + " " + box + " with " + d + " leftover " + packet + " and " + c + " leftover " + biscuit);
-
+        System.out.println("There " + are + " " + a + " " + packetA + " of " + biscuitA + ": " 
+        + b + " " + box + " with " + d + " leftover " + packet + " and " + c + " leftover " + biscuit);
+        }
+        
+        ///System.out.println("There " + are + " " + a + " " + packetA + " of " + biscuitA + ": " 
+        ///+ b + " " + box + " with " + d + " leftover " + packet + " and " + c + " leftover " + biscuit);
 
         ///There are/is x/no packet/s of biscuit/s: x/no box/es with x/no leftover packet/s and x/no leftover biscuit/s
 
         
     }
 }
+
