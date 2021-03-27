@@ -72,6 +72,15 @@ public class Main{
         if(leftover1 == 1){
             packet = "packet";
         }
+        if(leftover1 == 1){
+            packetA = "packets";
+        }
+        if(leftover1 > 1){
+            packetA = "packets";
+        }
+        if(leftover1 == 0){
+            packetA = "packets";
+        }
         if(remainder1 > 1){
             biscuit = "biscuits";
         }
@@ -84,6 +93,19 @@ public class Main{
         if(remainder1 == 0){
             d = "no";
         }
+        
+        if(remainder1 == 1){
+            packetA = "packet";
+        }
+        if(leftover1 == 1){
+            packet = "packets";
+        }
+        if(leftover1 == 1){
+            biscuit = "biscuit";
+        }
+
+        
+        
 
         if(packet1 > 0){
             a = String.valueOf(packet1);
