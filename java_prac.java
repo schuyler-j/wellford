@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 
+
 public class Main{
 
     public static void main(String[] args){
@@ -25,6 +26,8 @@ public class Main{
 
         String packet = "packet";
         String packets = "packets";
+        
+        String packetA = "";
 
         packet1 = biscuits1 / 12;
         remainder1 = packet1 % 30;
@@ -57,8 +60,11 @@ public class Main{
         if(box1 == 0){
             box = "boxes";
         }
-        if(leftover1 > 1){
-            packet = "packets";
+        if(packet1 == 1){
+            packetA = "packet";
+        }
+        if(packet1 > 1){
+            packetA = "packets";
         }
         if(leftover1 == 0){
             c = "no";
@@ -70,7 +76,7 @@ public class Main{
             biscuit = "biscuits";
         }
         if(remainder1 == 1){
-            biscuit = "biscuit";
+            biscuit = "biscuits";
         }
         if(remainder1 == 0){
             biscuit = "biscuits";
@@ -93,8 +99,7 @@ public class Main{
         }
 
 
-        System.out.println("There " + are + " " + a + " " + packet + " of " + biscuit + " : " + b + " " + box + " with " + 
-                           c + " leftover " + packet + " and " + d + " leftover " + biscuit);
+        System.out.println("There " + are + " " + a + " " + packetA + " of " + biscuit + " : " + b + " " + box + " with " + d + " leftover " + packet + " and " + c + " leftover " + biscuit);
 
 
         ///There are/is x/no packet/s of biscuit/s: x/no box/es with x/no leftover packet/s and x/no leftover biscuit/s
