@@ -1,0 +1,7 @@
+# ignore swp files etc...
+
+*.swp
+
+*.swo
+
+*.md~
