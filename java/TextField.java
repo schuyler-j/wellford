@@ -1,42 +1,50 @@
-package schu0527;
 
 import javax.swing.*;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.event.TextEvent;
-import java.awt.event.TextListener;
+import java.awt.event.ActionListener;
 
-public class TextField extends JPanel implements ActionListener{
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-    private final static String newLine = "\n";
+public class TextField extends JFrame implements ActionListener {
 
+    TextField() {
 
-    public txtField() {
+        JFrame frame = new JFrame();
+        Graphic graph = new Graphic();
 
-        ///JTextField text = new JTextField(15);
-        ///text.addActionListener(this);
+        graph.setBackground(Color.black);
 
         JTextArea textArea = new JTextArea(5, 15);
+        JTextField textField = new JTextField(15);
 
-        JPanel jp = new JPanel();
+        Container content = frame.getContentPane();
+        content.add(graph);
 
-        jp.add(textArea);
-        jp.setSize(20, 20);
+        textArea.setEditable(false);
+        textArea.setLineWrap(true);
+        textArea.setBackground(Color.darkGray);
+        textField.setBackground(Color.black);
+        textField.setForeground(Color.white);
+        frame.add(textArea);
+        frame.add(textField);
 
 
+        frame.setTitle("CLASS APP");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setSize(880, 440);
+        frame.setLocationRelativeTo(null);
+
+
+        frame.setLayout(new GridLayout());
+
+
+        ///frame.add(test);
+        /// test.add(tested);
+
+    }
+    public void actionPerformed(ActionEvent e) {
 
     }
 
-
-    @Override
-   public void actionPerformed(ActionEvent e) {
-
-   }
 }

@@ -1,34 +1,16 @@
-package schu0527;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Frame{
+public class Frame {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame();
-
-        Graphic graph = new Graphic();
-        TextField panel = new TextField();
-
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setSize(480, 640);
-        frame.add(panel);
-        frame.add(graph);
-        frame.setTitle("CLASS APP");
-
-
-
-
-        ///frame.add(test);
-       /// test.add(tested);
-
-
-
-
+        new TextField();
 
 
     }
