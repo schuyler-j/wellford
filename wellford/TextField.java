@@ -1,3 +1,4 @@
+package wellford;
 
 import javax.swing.*;
 import javax.swing.JTextArea;
@@ -32,7 +33,7 @@ public class TextField extends JFrame implements ActionListener {
         frame.setTitle("CLASS APP");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-        frame.setSize(880, 440);
+        frame.setSize(1880, 1440);
         frame.setLocationRelativeTo(null);
 
 

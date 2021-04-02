@@ -1,3 +1,4 @@
+package wellford;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -10,7 +11,7 @@ public class Frame {
 
     public static void main(String[] args) {
 
-        new TextField();
+        TextField t = new TextField();
 
 
     }
