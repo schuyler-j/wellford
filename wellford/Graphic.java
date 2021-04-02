@@ -22,8 +22,6 @@ public class Graphic extends JPanel implements ActionListener {
 
     int a, b, c, d;
 
-
-
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
