@@ -1,3 +1,4 @@
+package wellford;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,8 +18,6 @@ public class Graphic extends JPanel implements ActionListener {
 
     Timer tm = new Timer(50, this);
     int x = 0, velX = 2, y = 0;
-
-
 
 
     public void paintComponent(Graphics g) {
