@@ -42,7 +42,7 @@ public class Graphic extends JPanel implements ActionListener {
         g2D.setColor(Color.BLUE);
         g2D.fillRect(100, 110, 30, 30);
         g2D.setColor(Color.RED);
-        g2D.fillRect(a, b, 15, 15);
+        g2D.fillRect(c, d, 15, 15);
 
         g2D.setColor(Color.orange);
         g2D.fillRect(x, 330, 250, 5);
@@ -57,11 +57,18 @@ public class Graphic extends JPanel implements ActionListener {
         g2D.drawLine(10, 50, 10, 150);
         g2D.drawLine(80, 50, 80, 150);
 
-        if(a > 80 && a < 185 && b > 50 && b < 155) {
+        boolean now = false;
 
+        if(a > 50 && a < 150){
+            this.delete(g);
+            c = a;
+            d = b;
         }
-        else{
+
+        if(!now){
+            now = true;
         }
+
 
 
         //start the timer
@@ -75,13 +82,10 @@ public class Graphic extends JPanel implements ActionListener {
         PointerInfo mouse = MouseInfo.getPointerInfo();
         Point m = mouse.getLocation();
         a = (int) m.getX();
-        a = a-747;
         b = (int) m.getY();
-        b = b-46;
 
-
-
-
+        c = 1000;
+        d = 1000;
 
         x = x + velX;
 
@@ -92,20 +96,17 @@ public class Graphic extends JPanel implements ActionListener {
 
     }
 
-    public void hover(Graphics z){
-        super.paintComponent(z);
+    public void hover(Graphics g){
 
-        Graphics draw = (Graphics2D) z;
+        g.fillRect(100, 150, 110, 30);
 
-        draw.fillRect(100, 150, 110, 30);
 
     }
-    public void delete(Graphics z){
-        super.paintComponent(z);
+    public void delete(Graphics g){
 
-        Graphics draw = (Graphics2D) z;
+        g.setColor(Color.green);
+        g.fillRect(100, 280, 30, 30);
 
-        draw.clearRect(100, 150, 110, 30);
 
     }
 
