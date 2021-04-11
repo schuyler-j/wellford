@@ -1,38 +1,37 @@
 package wellford;
 
+import org.w3c.dom.css.RGBColor;
+
 import javax.swing.*;
 import javax.swing.JTextArea;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.sql.SQLOutput;
 
 public class TextField extends JFrame implements KeyListener {
 
     JTextArea textArea = new JTextArea(5, 15);
     JTextField textField = new JTextField(15);
+    Graphic graph = new Graphic();
     public void TextField() {
 
         JFrame frame = new JFrame();
-        Graphic graph = new Graphic();
 
-        graph.setBackground(Color.black);
+        graph.setBackground(Color.getHSBColor(285,482, 100));
 
         textField.addKeyListener(this);
 
         Container content = frame.getContentPane();
-        content.add(graph);
+        content.setLayout(new GridLayout());
 
-        textArea.setForeground(Color.white);
+        content.add(graph);
         textArea.setEditable(false);
         textArea.setLineWrap(true);
-        textArea.setBackground(Color.darkGray);
-        textField.setBackground(Color.black);
-        textField.setForeground(Color.white);
+        textArea.setBackground(Color.getHSBColor(305,200, 45));
+        textField.setBackground(Color.getHSBColor(34,100, 5));
         frame.add(textArea);
         frame.add(textField);
+
 
 
         frame.setTitle("CLASS APP");
@@ -40,9 +39,6 @@ public class TextField extends JFrame implements KeyListener {
         frame.setVisible(true);
         frame.setExtendedState(MAXIMIZED_BOTH);
         frame.setLocationRelativeTo(null);
-
-
-        frame.setLayout(new GridLayout());
 
 
         ///frame.add(test);
@@ -58,10 +54,20 @@ public class TextField extends JFrame implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
+        String newline = "\n";
 
         if(key == KeyEvent.VK_ENTER){
             String text = textField.getText();
             textArea.append(text);
+            textField.setText(null);
+            textArea.append(newline);
+
+            graph.label1 = text;
+
+            if(text.equals("clear")){
+                textArea.setText("");
+            }
+
         }
 
         if(key == KeyEvent.VK_DELETE){
@@ -69,6 +75,7 @@ public class TextField extends JFrame implements KeyListener {
         }
 
         if(key == KeyEvent.VK_CONTROL){
+            textArea.append(newline);
         }
 
     }

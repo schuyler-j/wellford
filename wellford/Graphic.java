@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serial;
 import java.util.EventListener;
+import java.util.Locale;
 import java.util.Random;
 
 
@@ -16,6 +17,8 @@ public class Graphic extends JPanel implements ActionListener {
      */
     @Serial
     private static final long serialVersionUID = 1L;
+
+    String label1 = "";
 
     Timer tm = new Timer(50, this);
     int x = 0, velX = 2, y = 0, velY = 4;
@@ -28,11 +31,13 @@ public class Graphic extends JPanel implements ActionListener {
 
         Graphics2D g2D = (Graphics2D) g;
         //draw the titles
-        g2D.setColor(Color.white);
+        g2D.setColor(Color.darkGray);
         g2D.drawString("DATA SCIENCE", 40, 180);
         g2D.drawString("COMPUTATIONAL INTELLIGENCE", 40, 200);
         g2D.drawString("COMPUTER PROGRAMMING", 40, 220);
         g2D.drawString("PSYCHOLOGY", 40, 240);
+
+        g2D.drawString(label1.toUpperCase(), 40, 800);
 
         //draw the boxes
         g2D.setColor(Color.ORANGE);
@@ -62,9 +67,7 @@ public class Graphic extends JPanel implements ActionListener {
 
         //to show the red box
         if(a > 30 && a < 70 && b > 160 && b < 200){
-            this.delete(g);
-            a = c;
-            b = d;
+            this.insert(g);
         }
 
         if(!now){
@@ -107,7 +110,7 @@ public class Graphic extends JPanel implements ActionListener {
 
 
     }
-    public void delete(Graphics g){
+    public void insert(Graphics g){
 
         g.setColor(Color.red);
         g.fillRect(30, 110, 30, 30);
