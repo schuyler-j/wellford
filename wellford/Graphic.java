@@ -18,7 +18,7 @@ public class Graphic extends JPanel implements ActionListener {
     private static final long serialVersionUID = 1L;
 
     Timer tm = new Timer(50, this);
-    int x = 0, velX = 2, y = 0;
+    int x = 0, velX = 2, y = 0, velY = 4;
 
     int a, b, c, d;
 
@@ -42,9 +42,10 @@ public class Graphic extends JPanel implements ActionListener {
         g2D.setColor(Color.BLUE);
         g2D.fillRect(100, 110, 30, 30);
         g2D.setColor(Color.RED);
-        g2D.fillRect(c, d, 15, 15);
+        g2D.fillRect(c, y, 15, 15);
 
         g2D.setColor(Color.orange);
+        //moving line
         g2D.fillRect(x, 330, 250, 5);
 
         //draw the lines
@@ -59,6 +60,7 @@ public class Graphic extends JPanel implements ActionListener {
 
         boolean now = false;
 
+        //to show the red box
         if(a > 545 && a < 600 && b > 470 && b < 510){
             this.delete(g);
             a = c;
@@ -81,20 +83,19 @@ public class Graphic extends JPanel implements ActionListener {
         a = (int) m.getX();
         b = (int) m.getY();
 
+        y = y + velY;
+
         c = 10;
         d = 10;
 
-        boolean reverse = false;
-        x = x + velX;
+        boolean reverse = true;
+        if(x < 80){
+           x = x + velX;
+           reverse = false;
+        }
 
-        if(x > 80){
-            reverse = true;
-        }
-        if(reverse){
+        if(x >= 80 && !reverse){
             x = x - velX;
-        }
-        if(!reverse && x < 10){
-            reverse = false;
         }
 
         repaint();
