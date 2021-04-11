@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 
-public class Main{
+public class biscuit{
 
     public static void main(String[] args){
         

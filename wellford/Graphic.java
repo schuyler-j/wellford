@@ -59,17 +59,15 @@ public class Graphic extends JPanel implements ActionListener {
 
         boolean now = false;
 
-        if(a > 50 && a < 150){
+        if(a > 545 && a < 600 && b > 470 && b < 510){
             this.delete(g);
-            c = a;
-            d = b;
+            a = c;
+            b = d;
         }
 
         if(!now){
             now = true;
         }
-
-
 
         //start the timer
         tm.start();
@@ -78,22 +76,28 @@ public class Graphic extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
         PointerInfo mouse = MouseInfo.getPointerInfo();
         Point m = mouse.getLocation();
         a = (int) m.getX();
         b = (int) m.getY();
 
-        c = 1000;
-        d = 1000;
+        c = 10;
+        d = 10;
 
+        boolean reverse = false;
         x = x + velX;
 
-        repaint();
         if(x > 80){
-            x = 0;
+            reverse = true;
+        }
+        if(reverse){
+            x = x - velX;
+        }
+        if(!reverse && x < 10){
+            reverse = false;
         }
 
+        repaint();
     }
 
     public void hover(Graphics g){
@@ -104,8 +108,8 @@ public class Graphic extends JPanel implements ActionListener {
     }
     public void delete(Graphics g){
 
-        g.setColor(Color.green);
-        g.fillRect(100, 280, 30, 30);
+        g.setColor(Color.red);
+        g.fillRect(30, 110, 30, 30);
 
 
     }
