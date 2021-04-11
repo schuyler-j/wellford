@@ -5,22 +5,27 @@ import javax.swing.JTextArea;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.sql.SQLOutput;
 
-public class TextField extends JFrame implements ActionListener {
+public class TextField extends JFrame implements KeyListener {
 
-    TextField() {
+    JTextArea textArea = new JTextArea(5, 15);
+    JTextField textField = new JTextField(15);
+    public void TextField() {
 
         JFrame frame = new JFrame();
         Graphic graph = new Graphic();
 
         graph.setBackground(Color.black);
 
-        JTextArea textArea = new JTextArea(5, 15);
-        JTextField textField = new JTextField(15);
+        textField.addKeyListener(this);
 
         Container content = frame.getContentPane();
         content.add(graph);
 
+        textArea.setForeground(Color.white);
         textArea.setEditable(false);
         textArea.setLineWrap(true);
         textArea.setBackground(Color.darkGray);
@@ -33,7 +38,7 @@ public class TextField extends JFrame implements ActionListener {
         frame.setTitle("CLASS APP");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-        frame.setSize(880, 440);
+        frame.setExtendedState(MAXIMIZED_BOTH);
         frame.setLocationRelativeTo(null);
 
 
@@ -44,8 +49,32 @@ public class TextField extends JFrame implements ActionListener {
         /// test.add(tested);
 
     }
-    public void actionPerformed(ActionEvent e) {
+
+    @Override
+    public void keyTyped(KeyEvent e) {
 
     }
 
+    @Override
+    public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode();
+
+        if(key == KeyEvent.VK_ENTER){
+            String text = textField.getText();
+            textArea.append(text);
+        }
+
+        if(key == KeyEvent.VK_DELETE){
+            textArea.setText("");
+        }
+
+        if(key == KeyEvent.VK_CONTROL){
+        }
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }

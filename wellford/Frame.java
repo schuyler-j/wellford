@@ -12,7 +12,7 @@ public class Frame {
     public static void main(String[] args) {
 
         TextField t = new TextField();
-
+        t.TextField();
 
     }
 }

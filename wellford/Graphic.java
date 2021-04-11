@@ -46,7 +46,7 @@ public class Graphic extends JPanel implements ActionListener {
 
         g2D.setColor(Color.orange);
         //moving line
-        g2D.fillRect(x, 330, 250, 5);
+        g2D.fillRect(x, 330, 250, 2);
 
         //draw the lines
         g2D.setColor(Color.BLUE);
@@ -61,7 +61,7 @@ public class Graphic extends JPanel implements ActionListener {
         boolean now = false;
 
         //to show the red box
-        if(a > 545 && a < 600 && b > 470 && b < 510){
+        if(a > 30 && a < 70 && b > 160 && b < 200){
             this.delete(g);
             a = c;
             b = d;
@@ -84,20 +84,20 @@ public class Graphic extends JPanel implements ActionListener {
         b = (int) m.getY();
 
         y = y + velY;
+        if(y > 1080){
+            y = 0;
+        }
 
-        c = 10;
-        d = 10;
+        c = a;
+        d = b;
 
-        boolean reverse = true;
-        if(x < 80){
+        if(x >= 0 && x < 180){
+            velX = +velX;
            x = x + velX;
-           reverse = false;
+        }else if(x >= 180 || x <= 0){
+            velX = -velX;
+            x = x + velX;
         }
-
-        if(x >= 80 && !reverse){
-            x = x - velX;
-        }
-
         repaint();
     }
 
