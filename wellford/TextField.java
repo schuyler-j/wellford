@@ -22,27 +22,28 @@ public class TextField extends JFrame implements KeyListener {
         textField.addKeyListener(this);
 
         Container content = frame.getContentPane();
+        content.add(graph);
         content.setLayout(new GridLayout());
 
-        content.add(graph);
         textArea.setEditable(false);
         textArea.setLineWrap(true);
-        textArea.setBackground(Color.getHSBColor(305,200, 45));
-        textField.setBackground(Color.getHSBColor(34,100, 5));
+        textArea.setBackground(Color.getHSBColor(735,630, 50));
+        textField.setBackground(Color.getHSBColor(234,30, 5));
         frame.add(textArea);
         frame.add(textField);
 
 
 
+        frame.setSize(720, 480);
         frame.setTitle("CLASS APP");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setExtendedState(MAXIMIZED_BOTH);
+        //frame.setExtendedState(MAXIMIZED_BOTH);
         frame.setLocationRelativeTo(null);
 
 
         ///frame.add(test);
         /// test.add(tested);
+        frame.setVisible(true);
 
     }
 

@@ -49,7 +49,7 @@ public class Graphic extends JPanel implements ActionListener {
         g2D.setColor(Color.RED);
         g2D.fillRect(c, y, 15, 15);
 
-        g2D.setColor(Color.orange);
+        g2D.setColor(Color.cyan);
         //moving line
         g2D.fillRect(x, 330, 250, 2);
 
@@ -83,6 +83,7 @@ public class Graphic extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         PointerInfo mouse = MouseInfo.getPointerInfo();
         Point m = mouse.getLocation();
+        //SwingUtilities.convertPointFromScreen(m, );
         a = (int) m.getX();
         b = (int) m.getY();
 
